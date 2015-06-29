@@ -1,0 +1,66 @@
+{% extends 'home/home_base.html' %}
+
+{% block body %}
+	<h1>Home</h1>
+	<ul>
+		<li>Hero area</li>
+		<li>Definición de hacker</li>
+		<li>Manifesto</li>
+		<li>
+			<a href="{% url 'programs:home' %}">Programas</a>
+			<ul>
+				{% for program in programs %}
+					<li>
+						<a href="{% url 'programs:program' slug=program.slug %}">
+							{{ program.name }}
+						</a>
+						<p>{{ program.short_description }}</p>
+					</li>
+					{% empty %}
+					<p>No hay programas todavía</p>
+				{% endfor %}
+			</ul>
+			<p><a href="{% url 'programs:home' %}">Más información</a></p>
+		</li>
+		<li>Testimonios</li>
+		<li>Prensa</li>
+		<li>
+			<a href="{% url 'senseis:home' %}">Senseis</a>
+			<ul>
+				{% for sensei in senseis %}
+					<li>
+						<a href="{% url 'senseis:sensei' slug=sensei.slug %}">
+							<figure>
+								<img src="{{ sensei.picture.url }}" alt="{{ sensei.first_name }}" style="display: block; width: 80px; border-radius: 50%;" />
+							</figure>
+							{{ sensei.first_name }} {{ sensei.last_name }}
+						</a>
+					</li>
+					{% empty %}
+					<p>No hay senseis todavía</p>
+				{% endfor %}
+			</ul>
+			<p><a href="{% url 'senseis:home' %}">Ver todos</a></p>
+		</li>
+		<li>
+			<a href="{% url 'mentors:home' %}">Mentores</a>
+			<ul>
+				{% for mentor in mentors %}
+					<li>{{ mentor.first_name }} {{ mentor.last_name }}</li>
+					{% empty %}
+					<p>No hay mentores todavía</p>
+				{% endfor %}
+			</ul>
+			<p><a href="{% url 'mentors:home' %}">Ver todos</a></p>
+		</li>
+		<li>
+			<a href="#">Blog</a>
+			<ul>
+				<li><a href="#">Último post</a></li>
+				<li><a href="#">Penúltimo post</a></li>
+				<li><a href="#">Antepenúltimo post</a></li>
+			</ul>
+		</li>
+	</ul>
+	<p><strong><a href="{% url 'about' %}">Más acerca de Dev.f</a></strong></p>
+{% endblock %}

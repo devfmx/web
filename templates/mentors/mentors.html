@@ -1,0 +1,15 @@
+{% extends 'home/home_base.html' %}
+
+{% block body %}
+	<h1>Mentores</h1>
+	<ul>
+		{% for mentor in mentor_list %}
+			<li>
+				<p>{{ mentor.first_name }} {{ mentor.last_name }}</p>
+				<p>{{ mentor.short_description }}</p>
+			</li>
+			{% empty %}
+			<p>No hay mentores aún</p>
+		{% endfor %}
+	</ul>
+{% endblock %}

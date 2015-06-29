@@ -1,0 +1,17 @@
+{% extends 'home/home_base.html' %}
+{% load django_markdown %}
+
+{% block body %}
+	<h1>{{ program.name }}</h1>
+	<p>{{ program.short_description }}</p>
+	<ul>
+		<li>40000000 horas</li>
+		<li>300000 semanas</li>
+		<li>Sales con título XD</li>
+	</ul>
+	<p>{{ program.description|markdown }}</p>
+	<h3>Resultados:</h3>
+	<ul>
+		<li>Los alumnos se van a SV XD</li>
+	</ul>
+{% endblock %}

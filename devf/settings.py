@@ -28,6 +28,12 @@ INSTALLED_APPS = (
 
     'storages',
     'django_markdown',
+
+    'home',
+    'mentors',
+    'programs',
+    'senseis',
+    'testimonials',
 )
 
 MIDDLEWARE_CLASSES = (

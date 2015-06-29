@@ -1,0 +1,20 @@
+{% extends 'home/home_base.html' %}
+
+{% block body %}
+	<h1>Programs</h1>
+	<ul>
+		{% for program in program_list %}
+			<li>
+				<p><a href="{% url 'programs:program' slug=program.slug %}">{{ program.name }}</a></p>
+				<p>{{ program.short_description }}</p>
+				<ul>
+					<li>40000000 horas</li>
+					<li>300000 semanas</li>
+					<li>Sales con título XD</li>
+				</ul>
+			</li>
+			{% empty %}
+			<p>No hay programas aún</p>
+		{% endfor %}
+	</ul>
+{% endblock %}

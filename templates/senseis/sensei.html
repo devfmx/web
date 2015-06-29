@@ -1,0 +1,12 @@
+{% extends 'home/home_base.html' %}
+
+{% block body %}
+	<a href="{% url 'senseis:sensei' slug=sensei.slug %}">
+		<figure>
+			<img src="{{ sensei.picture.url }}" alt="{{ sensei.first_name }}" style="display: block; width: 80px; border-radius: 50%;" />
+		</figure>
+	</a>
+	<h1>{{ sensei.first_name }} {{ sensei.last_name }}</h1>
+	<p>{{ sensei.specialty }}</p>
+	<p>{{ sensei.short_description }}</p>
+{% endblock %}

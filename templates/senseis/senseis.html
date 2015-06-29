@@ -1,0 +1,21 @@
+{% extends 'home/home_base.html' %}
+
+{% block body %}
+	<h1>Senseis</h1>
+	<ul>
+		{% for sensei in sensei_list %}
+			<li>
+				<h4>{{ sensei.first_name }} {{ sensei.last_name }}</h4>
+				<p>{{ sensei.specialty }}</p>
+				<p>{{ sensei.short_description }}</p>
+				<a href="{% url 'senseis:sensei' slug=sensei.slug %}">
+					<figure>
+						<img src="{{ sensei.picture.url }}" alt="{{ sensei.first_name }}" style="display: block; width: 80px; border-radius: 50%;" />
+					</figure>
+				</a>
+			</li>
+			{% empty %}
+			<p>No hay senseis aún</p>
+		{% endfor %}
+	</ul>
+{% endblock %}
