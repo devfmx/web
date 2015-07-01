@@ -1,22 +1,22 @@
-{% extends "home/base_home.html" %}
+{% load static from staticfiles %}
 
 <header>
-	<nav class="navbar navbar-default">
-		<div class="container-fliud">
+	<nav class="navbar navbar-default navbar-static-top">
+		<div class="container">
 			<div class="navbar-header">
 				<a href="{% url 'home' %}" class="navbar brand">
 					<img src="{% static "img/home/logo.png" %}" alt="Dev.f" />
+					<p class="devf-white-link devf-thin-text">Dessarrollamos Developers</p>
 				</a>
 			</div>
+			<ul class="devf-menu-bar nav navbar-nav navbar-right">
+				<li><a href="{% url "home" %}" class="devf-selected-menu">Inicio</a></li>
+				<li><a href="{% url "about" %}">Acerca de</a></li>
+				<li><a href="{% url "programs:home" %}">Programas</a></li>
+				<li><a href="{% url "senseis:home" %}">Senseis</a></li>
+				<li><a href="{% url "mentors:home" %}">Mentores</a></li>
+				<li><a href="{% url "home" %}">Blog</a></li>
+			</ul>
 		</div>
 	</nav>
 </header>
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">
-                <img alt="Brand" src="...">
-            </a>
-        </div>
-    </div>
-</nav>

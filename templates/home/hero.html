@@ -1,0 +1,17 @@
+{% load static from staticfiles %}
+
+<style>
+	@import url(http://fonts.googleapis.com/css?family=Fredoka+One);	
+</style>
+
+<div class="devf-hero container center-block" style="background-image: url({% static "img/home/hero.png" %});">
+	<div class="row">
+		<div class="devf-center-vh col-md-6 col-sm-12">
+			<h1>Primer escuela para Hackers en Latino América.</h1>
+			<p>Forma parte de la comunidad.</p>
+			<p class="devf-aply-button">
+				<a href="{% url "home" %}">¡Aplica ya!</a>
+			</p>
+		</div>
+	</div>
+</div>
