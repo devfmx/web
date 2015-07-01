@@ -1,12 +1,12 @@
 /* Variables */
-orange_link = #f97352
+blue_link = #52B3F9
 green_button = #7dcd40
 /* Variables */
 
 /* OOCSS Classes*/
 .devf-aply-button	
 	a
-		background orange_link;
+		background blue_link;
 		font-weight bolder
 		font-size 16px
 		padding .7em 3em
@@ -14,7 +14,8 @@ green_button = #7dcd40
 		color white
 		text-transform uppercase
 		letter-spacing 1px
-		box-shadow: 0 3px 1px 0 #E24822
+		box-shadow: 0 3px 1px 0 #228BE2
+		border-radius 5px
 
 		-webkit-transition .2s
 		-moz-transition .2s
@@ -22,9 +23,9 @@ green_button = #7dcd40
 		transition .2s
 
 		&:hover
-			box-shadow: 0 5px 1px 0 rgb(70,70,70)
+			box-shadow: 0 5px 1px 0 #578F2C
 			text-decoration none
-			background rgb(36,36,36)
+			background #7dcd40
 			color white
 			padding .9em 3.2em
 
@@ -64,10 +65,10 @@ header
 					font-weight bolder
 
 					&:hover
-						color orange_link
+						color blue_link
 
 				.devf-selected-menu
-					color orange_link
+					color blue_link
 
 
 .devf-hero
@@ -96,13 +97,16 @@ header
 
 		h1
 			font-size 3em
-			/*font-family 'Fredoka One', cursive*/
+			text-align center
+			font-family 'Fredoka One', cursive
 			text-transform uppercase
 			font-weight bolder
 			color white
 
 		p
-			color orange_link
+			color white
+			text-align center
+			margin-top 3em
 			font-weight 100
 			font-size 1.5em
 
