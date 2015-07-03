@@ -1,3 +1,4 @@
+"""Home views."""
 # -*- coding: utf-8 -*-
 from django.views import generic
 
@@ -7,34 +8,49 @@ from senseis.models import Sensei
 
 import random
 
+
 class HomeView(generic.TemplateView):
-	template_name = 'home/home.html'
 
-	def get_context_data(self):
-		context = super(HomeView, self).get_context_data()
+    """Class-based view that handle the / URL."""
 
-		context['title'] = 'Dev.f'
-		context['meta_description'] = 'Aprende a construir software en la primera y más grande escuela de hackers de México y LatAm'
+    template_name = 'home/home.html'
 
-		senseis_object_list = list(Sensei.objects.all())
-		random.shuffle(senseis_object_list)
-		context['senseis'] = senseis_object_list[:3]
+    def get_context_data(self):
+        """Override get_context_data method from TemplateView to set
+        all the new template variables.
+        """
+        context = super(HomeView, self).get_context_data()
 
-		context['programs'] = Program.objects.published()
+        context['title'] = 'Dev.f'
+        context['meta_description'] = 'Aprende a construir software en la ' +\
+                                      'primera y más grande escuela de hackers ' +\
+                                      'de México y LatAm'
 
-		mentors_object_list = list(Mentor.objects.all())
-		random.shuffle(mentors_object_list)
-		context['mentors'] = mentors_object_list[:5]
+        senseis_object_list = list(Sensei.objects.all())
+        random.shuffle(senseis_object_list)
+        context['senseis'] = senseis_object_list[:3]
+        context['programs'] = Program.objects.published()
 
-		return context
+        mentors_object_list = list(Mentor.objects.all())
+        random.shuffle(mentors_object_list)
+        context['mentors'] = mentors_object_list[:5]
+
+        return context
+
 
 class AboutView(generic.TemplateView):
-	template_name = 'home/about.html'
 
-	def get_context_data(self):
-		context = super(AboutView, self).get_context_data()
+    """Class-based view that handle the /about URL."""
 
-		context['title'] = 'Acerca de'
-		context['meta_description'] = 'Conoce más sobre la escuela de hackers.'
+    template_name = 'home/about.html'
 
-		return context
+    def get_context_data(self):
+        """Override get_context_data method from TemplateView to set
+        all the new template variables.
+        """
+        context = super(AboutView, self).get_context_data()
+
+        context['title'] = 'Acerca de'
+        context['meta_description'] = 'Conoce más sobre la escuela de hackers.'
+
+        return context
