@@ -1,3 +1,5 @@
+"""Django Settings File."""
+
 import os
 import dj_database_url
 
@@ -78,7 +80,7 @@ DATABASES = {
 }
 
 if ENVIRONMENT != 'development':
-    DATABASES['default'] =  dj_database_url.config()
+    DATABASES['default'] = dj_database_url.config()
 
 LANGUAGE_CODE = 'es-mx'
 
@@ -102,7 +104,7 @@ STATIC_URL = '/static/'
 MEDIAFILES_LOCATION = 'development_media'
 
 if not DEBUG:
-    STATIC_URL = 'https://%s.s3.amazonaws.com/' %os.getenv('AWS_S3_BUCKET')
+    STATIC_URL = 'https://%s.s3.amazonaws.com/' % os.getenv('AWS_S3_BUCKET')
     STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
     MEDIAFILES_LOCATION = 'media'
 
@@ -111,6 +113,7 @@ AWS_ACCESS_KEY_ID = os.getenv('AWS_S3_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.getenv('AWS_S3_SECRET_ACCESS_KEY')
 AWS_QUERYSTRING_AUTH = False
 
-MEDIA_URL = 'https://%s.s3.amazonaws.com/%s/' % (os.getenv('AWS_S3_BUCKET'), MEDIAFILES_LOCATION)
+MEDIA_URL = 'https://{0}.s3.amazonaws.com' +\
+            '/{1}/'.format(os.getenv('AWS_S3_BUCKET'), MEDIAFILES_LOCATION)
 DEFAULT_FILE_STORAGE = 'devf.custom_storages.MediaStorage'
 # Static and Media Files

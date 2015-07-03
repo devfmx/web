@@ -8,7 +8,7 @@ $(function () {
 		ease: Elastic.easeOut
 	});
 
-	var animateHDTexts = TweenMax.staggerFrom('.devf-hd-text', 0.5, {
+	var animateHDTexts = TweenMax.staggerFrom('.devf-hd-text', 0.3, {
 		x: '999',
 		ease: Power2.easeIn
 	});
