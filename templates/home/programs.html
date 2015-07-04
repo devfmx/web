@@ -8,15 +8,17 @@
             </div>
         </div>
         <div class="row">
-            <div class="devf-program-box col-md-4 col-sm-12">
-
-            </div>
-            <div class="devf-program-box col-md-4 col-sm-12">
-
-            </div>
-            <div class="devf-program-box col-md-4 col-sm-12">
-
-            </div>
+            {% for program in programs %}
+                <div class="devf-program-box col-md-4 col-sm-12">
+                    <div class="dev-program-header">
+                        <h3>{{ program.name }}</h3>
+                        <p>
+                            <span class="devf-old-price">{{program.old_price}}</span> /
+                            <span class="devf-actual-price">{{program.actual_price}}</span>
+                        </p>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
     </div>
 </section>
