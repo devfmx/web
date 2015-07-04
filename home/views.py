@@ -29,7 +29,10 @@ class HomeView(generic.TemplateView):
         senseis_object_list = list(Sensei.objects.all())
         random.shuffle(senseis_object_list)
         context['senseis'] = senseis_object_list[:3]
-        context['programs'] = Program.objects.published()
+
+        programs_object_list = list(Program.objects.all())
+        random.shuffle(programs_object_list)
+        context['programs'] = programs_object_list[:3]
 
         mentors_object_list = list(Mentor.objects.all())
         random.shuffle(mentors_object_list)

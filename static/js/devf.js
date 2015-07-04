@@ -10,6 +10,7 @@ $(function () {
 
 	var animateHDTexts = TweenMax.staggerFrom('.devf-hd-text', 0.8, {
 		y: 100,
+		opacity: 0,
 		ease: Elastic.easeOut
 	});
 
