@@ -9,7 +9,7 @@ $(function () {
 	});
 
 	var animateHDTexts = TweenMax.staggerFrom('.devf-hd-text', 0.3, {
-		x: '999',
+		y: '500',
 		ease: Power2.easeIn
 	});
 
