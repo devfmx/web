@@ -8,9 +8,9 @@ $(function () {
 		ease: Elastic.easeOut
 	});
 
-	var animateHDTexts = TweenMax.staggerFrom('.devf-hd-text', 0.3, {
-		y: '500',
-		ease: Power2.easeIn
+	var animateHDTexts = TweenMax.staggerFrom('.devf-hd-text', 0.8, {
+		y: 100,
+		ease: Elastic.easeOut
 	});
 
 	var scene = new ScrollScene({
