@@ -1,5 +1,5 @@
-"""Home views."""
 # -*- coding: utf-8 -*-
+"""Home views."""
 from django.views import generic
 
 from mentors.models import Mentor

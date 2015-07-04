@@ -1,5 +1,5 @@
 {% extends 'home/home_base.html' %}
-
+{% load static from staticfiles %}
 
 {% block body %}
 
@@ -10,6 +10,8 @@
 	{% include "home/hacker_definition.html" %}
 
 	{% include "home/manifesto.html" %}
+
+	<section class="devf-wide-image" style="background-image: url({% static "img/home/separator-2.jpg" %});"></section>
 
 	<h1>Home</h1>
 	<ul>
