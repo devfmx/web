@@ -13,7 +13,14 @@ urlpatterns = [
     url(r'^$', home_views.HomeView.as_view(), name='home'),
     url(r'^about/$', home_views.AboutView.as_view(), name='about'),
 
-    url(r'^aplica/$', RedirectView.as_view(url='https://devf.typeform.com/to/vGqumC'), name='apply'),
+    url(
+        r'^aplica/$',
+        RedirectView.as_view(
+            url='https://devf.typeform.com/to/vGqumC',
+            permanent=True
+        ),
+        name='apply',
+    ),
 
     url(r'^mentores/', include(mentors_urls, namespace='mentors')),
     url(r'^programas/', include(programs_urls, namespace='programs')),

@@ -13,7 +13,7 @@
             </div>
             <div class="row">
                 {% for sensei in senseis %}
-                    <div class="col-md-4 col-sm-12 devf-sensei-box">
+                    <div class="col-md-4 col-sm-12 devf-sensei-box-home">
                         <a href="{% url "senseis:sensei" slug=sensei.slug %}">
                             <figure>
                                 <img src="{{ sensei.picture.url }}" alt="{{ sensei.first_name }}" />
