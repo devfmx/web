@@ -8,6 +8,10 @@
                 <p class="devf-programs-see-all">
                     <a href="{% url 'programs:home' %}">Ver todos los programas</a>
                 </p>
+                <br>
+                <p class="devf-aply-button" style="text-align center">
+    				<a href="{% url "apply" %}">¡Aplica ya!</a>
+    			</p>
             </div>
         </div>
         {% for program in programs%}
@@ -50,6 +54,5 @@
                 </div>
             {% endif %}
         {% endfor %}
-
     </div>
 </section>

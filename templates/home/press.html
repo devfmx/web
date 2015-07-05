@@ -11,6 +11,7 @@
             {% endif %}
             <div class="col-md-3 col-sm-12 devf-press-box">
                 <a href="{{ press_object.link }}" target="_blank">
+                    <p>{{ press_object.press_name }}</p>
                     <figure>
                         <img src="{{ press_object.image.url }}" alt="{{ press_object.press_name }}" />
                     </figure>
@@ -26,5 +27,12 @@
                 </div>
             {% endif %}
         {% endfor %}
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-md-offset-4" style="margin-top: 3em;">
+                <p class="devf-aply-button" style="text-align center">
+    				<a href="{% url "apply" %}">¡Aplica ya!</a>
+    			</p>
+            </div>
+        </div>
     </div>
 </section>

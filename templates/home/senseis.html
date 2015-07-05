@@ -1,0 +1,45 @@
+{% load static from staticfiles %}
+
+<section id="devf-senseis" class="container-fluid" style="background-image: url({% static "img/home/ederpitmin.jpg" %})">
+    <div class="container-fluid devf-senseis-overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>Tus senseis</h2>
+                    <p>
+                        Quienes te acompañarán durante todo el camino.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                {% for sensei in senseis %}
+                    <div class="col-md-4 col-sm-12 devf-sensei-box-home">
+                        <a href="{% url "senseis:sensei" slug=sensei.slug %}">
+                            <figure>
+                                <img src="{{ sensei.picture.url }}" alt="{{ sensei.first_name }}" />
+                            </figure>
+                        </a>
+                        <p class="devf-sensei-name">
+                            <a href="{% url "senseis:sensei" slug=sensei.slug %}">
+                                {{ sensei.first_name }} {{sensei.last_name }}
+                            </a>
+                        </p>
+                        <p class="devf-sensei-specialty">
+                            Especialidad: <span>{{ sensei.specialty }}</span>
+                        </p>
+                        <p class="devf-sensei-description">
+                            {{ sensei.short_description }}
+                        </p>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <p class="devf-senseis-all">
+                        <a href="{% url "senseis:home" %}"><i class="fa fa-bolt"></i> Ver todos</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
