@@ -1,4 +1,5 @@
 {% extends 'home/home_base.html' %}
+{% load static from staticfiles %}
 
 {% block body %}
 	{% include 'home/header.html' %}
@@ -7,21 +8,53 @@
 	<div class="container-fluid about">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6 who-what">
+				<div class="col-md-6 col-sm-12 who-what">
 					<h2>¿Quiénes somos?</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae voluptatibus, eligendi praesentium quis eius similique illum libero veritatis expedita sed, doloremque dolore! Eligendi quam tenetur, culpa perspiciatis laboriosam corrupti dicta!
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem cumque, excepturi amet deserunt. Quidem, voluptate, quas laborum rem quisquam vero exercitationem ex, ab aut aliquam, omnis nemo. Consequatur, ut, enim?
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quos, amet possimus quas esse quis repudiandae architecto ipsam eaque porro pariatur tenetur autem quia, deserunt expedita, debitis voluptate odio in?
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi ab temporibus ratione, sed illo tempora nulla quasi velit, vero veniam at? Maiores ipsam dolorem atque ab, omnis debitis nemo explicabo.</p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quos, amet possimus quas esse quis repudiandae architecto ipsam eaque porro pariatur tenetur autem quia, deserunt expedita, debitis voluptate odio in?</p>
 				</div>
-				<div class="col-md-6 who-what">
+				<div class="col-md-6 com-sm-12 who-what">
 					<h2>¿Qué hacemos?</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae voluptatibus, eligendi praesentium quis eius similique illum libero veritatis expedita sed, doloremque dolore! Eligendi quam tenetur, culpa perspiciatis laboriosam corrupti dicta!
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem cumque, excepturi amet deserunt. Quidem, voluptate, quas laborum rem quisquam vero exercitationem ex, ab aut aliquam, omnis nemo. Consequatur, ut, enim?
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quos, amet possimus quas esse quis repudiandae architecto ipsam eaque porro pariatur tenetur autem quia, deserunt expedita, debitis voluptate odio in?
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi ab temporibus ratione, sed illo tempora nulla quasi velit, vero veniam at? Maiores ipsam dolorem atque ab, omnis debitis nemo explicabo.</p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quos, amet possimus quas esse quis repudiandae architecto ipsam eaque porro pariatur tenetur autem quia, deserunt expedita, debitis voluptate odio in?</p>
 				</div>
 			</div>
 		</div>
 	</div>
-{% endblock %}about.html
+	<div class="container-fluid gim">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<figure>
+						<img src="{% static "img/home/banda.jpg" %}" alt="">
+					</figure>
+				</div>
+				<div class="col-md-12 col-sm-12 text">
+					<p>
+						El Dev.F. es un gimnasio para la mente, donde ejercitas y desarrollas las habilidades técnicas necesarias para ingresar al mundo del software, junto a la comunidad de hackers que está transformando la región.
+					</p>
+					<p>
+						Nuestro secreto: Más que desarrollar tecnología, desarrollamos personas.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid music">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<h1>La música en Dev.f</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit earum dolor possimus tenetur cum, inventore saepe asperiores at itaque maxime. Nam non quam nulla similique veritatis veniam officia quidem, esse. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum hic in, minima temporibus officia, quidem. Reiciendis minima, similique perspiciatis pariatur tempore numquam doloribus dolores qui nemo necessitatibus repellendus aperiam quisquam.</p>
+				</div>
+				<div class="col-md-6 spotify">
+					<iframe src="https://embed.spotify.com/?uri=spotify:user:1279021652:playlist:4ah7dzrL6RY7OyYikabJhz" frameborder="0" allowtransparency="true" width="400" height="450"></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{% include 'home/footer.html' %}
+{% endblock %}
