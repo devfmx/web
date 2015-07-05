@@ -18,8 +18,8 @@ class Program(models.Model):
     """Porgram Model."""
 
     name = models.CharField(max_length=255)
-    old_price = models.FloatField(default=0.0)
-    actual_price = models.FloatField(default=0.0)
+    old_price = models.IntegerField(default=0)
+    actual_price = models.IntegerField(default=0)
     requirements = models.TextField(default='', null=True)
     logo = models.ImageField(upload_to='program_images', null=True)
     slug = models.SlugField(max_length=200, unique=True)
