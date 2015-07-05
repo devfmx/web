@@ -16,9 +16,11 @@
 			{% endif %}
 			<div class="col-md-3 col-sm-6 col-xs-12 sensei">
 				<div class="devf-sensei-box">
-					<figure>
-						<img src="{{ sensei.picture.url }}" alt="{{ sensei.first_name }}" data-hover-image="{{ sensei.picture2.url }}" />
-					</figure>
+					<a href="{{ sensei.info }}" target="_blank" >
+						<figure>
+							<img src="{{ sensei.picture.url }}" alt="{{ sensei.first_name }}" data-hover-image="{{ sensei.picture2.url }}" />
+						</figure>
+					</a>
 					<h3>{{ sensei.first_name }} {{ sensei.last_name }}</h3>
 					<small>{{ sensei.specialty }}</small>
 					<p>{{ sensei.short_description }}</p>
