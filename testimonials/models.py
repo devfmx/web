@@ -10,7 +10,7 @@ class Testimonial(models.Model):
     testimonial = models.TextField(max_length=1000)
     person = models.CharField(max_length=255)
     person_title = models.CharField(max_length=255)
-    picture = models.ImageField(upload_to='testimonials',
+    picture = models.ImageField(upload_to='senseis',
                                 null=True, blank=True)
 
     def __unicode__(self):
@@ -21,6 +21,6 @@ class Testimonial(models.Model):
         """Return a HTML with the testimonial person picture."""
         return """<img src="%s" style="
                   display: block; width: 50px;"/>
-               """ % self.picture
+               """ % self.picture.url
 
     ViewPicture.allow_tags = True

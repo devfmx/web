@@ -20,30 +20,12 @@
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner devf-slider" role="listbox">
                         {% for testimonial in testimonials %}
-
-                            {% if forloop.first %}
-                                <div class="item active devf-slider-item">
-                                    <figure>
-                                        <img src="https://devf.s3.amazonaws.com/development_media/senseis/gabs.png"  alt="{{ testimonial.person }}" />
-                                    </figure>
-                                    <p class="devf-testimonial-text">
-                                        {{ testimonial.testimonial }}
-                                    </p>
-                                    <p class="devf-testimonial-person">
-                                        {{ testimonial.person }}
-                                    </p>
-                                    <p class="devf-testimonial-title">
-                                        {{ testimonial.person_title }}
-                                    </p>
-                                </div>
-                            {% endif %}
-
-                            <div class="item devf-slider-item">
+                            <div class="item {% if forloop.first %}active{% endif %} devf-slider-item">
                                 <figure>
-                                    <img src="https://devf.s3.amazonaws.com/development_media/senseis/gabs.png"  alt="{{ testimonial.person }}" />
+                                    <img src="{{ testimonial.picture.url }}"  alt="{{ testimonial.person }}" />
                                 </figure>
                                 <p class="devf-testimonial-text">
-                                    {{ testimonial.testimonial }}
+                                    "{{ testimonial.testimonial }}"
                                 </p>
                                 <p class="devf-testimonial-person">
                                     {{ testimonial.person }}
@@ -52,7 +34,6 @@
                                     {{ testimonial.person_title }}
                                 </p>
                             </div>
-
                         {% endfor %}
 
                     <!-- Controls -->
