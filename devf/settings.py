@@ -18,6 +18,7 @@ ALLOWED_HOSTS = [
     'devf.mx',
     'www.devf.mx',
     'devfmx.herokuapp.com',
+    'improving.devf.mx',
 ]
 
 INSTALLED_APPS = (
