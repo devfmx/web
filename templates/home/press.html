@@ -1,0 +1,30 @@
+{% load static from staticfiles %}
+
+<section id="devf-press" class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <h2>Lo que se está diciendo del <span class="devf-stronger">Dev.f</span></h2>
+        </div>
+        {% for press_object in press %}
+            {% if forloop.first %}
+                <div class="devf-press-container row">
+            {% endif %}
+            <div class="col-md-3 col-sm-6 devf-press-box">
+                <a href="{{ press.link }}" target="_blank">
+                    <figure>
+                        <img src="{{ press_object.image.url }}" alt="{{ press_object.press_name }}" />
+                    </figure>
+                </a>
+            </div>
+            {% if forloop.counter|divisibleby:"3" %}
+                </div>
+                {% if not forloop.last %}
+                    <div class="devf-press-container row">
+                {% endif %}
+            {% endif %}
+            {% if forloop.last %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>

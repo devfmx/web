@@ -34,13 +34,13 @@ class Press(models.Model):
     """Press model."""
 
     quoute = models.CharField(max_length=255, null=True, blank=True)
-    press_namme = models.CharField(max_length=255, null=True, blank=True)
+    press_name = models.CharField(max_length=255, null=True, blank=True)
     image = models.ImageField(upload_to='press', null=True, blank=True)
     link = models.URLField(null=True, blank=True)
 
     def __unicode__(self):
         """Return the press name."""
-        return self.press_namme
+        return self.press_name
 
     def showImage(self):
         """Return a HTML with the press picture."""
@@ -50,3 +50,5 @@ class Press(models.Model):
                    """ % self.image.url
         else:
             return None
+
+    showImage.allow_tags = True
