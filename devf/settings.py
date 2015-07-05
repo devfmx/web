@@ -48,7 +48,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'devf.middlewares.SSLMiddleware',
+    # 'devf.middlewares.SSLMiddleware',
 )
 
 ROOT_URLCONF = 'devf.urls'
