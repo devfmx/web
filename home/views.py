@@ -65,3 +65,5 @@ class AboutView(generic.TemplateView):
         context['meta_description'] = 'Conoce más sobre la escuela de hackers.'
 
         return context
+
+# class ApplyView(generic)
