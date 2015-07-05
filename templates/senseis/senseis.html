@@ -5,21 +5,41 @@
 
 	{% include 'senseis/senseis_hero.html' %}
 
-	<h1>Senseis</h1>
-	<ul>
+	<div class="container-fluid senseis-body">
+		<div class="col-md-12 senseis-title" >
+			<h1>Conoce al Team de Dev.f</h1>
+		</div>
+		<div class="container">
 		{% for sensei in sensei_list %}
-			<div class="col-md-4 sensei">
-				<h4>{{ sensei.first_name }} {{ sensei.last_name }}</h4>
-				<p>{{ sensei.specialty }}</p>
-				<p>{{ sensei.short_description }}</p>
-				<a href="{% url 'senseis:sensei' slug=sensei.slug %}">
-					<figure>
-						<img src="{{ sensei.picture.url }}" alt="{{ sensei.first_name }}" style="display: block; width: 80px; border-radius: 50%;" />
-					</figure>
-				</a>
+			{% if forloop.first %}
+				<div class="devf-senseis-container row">
+			{% endif %}
+			<div class="col-md-3 col-sm-6 col-xs-12 sensei">
+				<div class="devf-sensei-box">
+					<a href="{{ sensei.info }}" target="_blank" >
+						<figure>
+							<img src="{{ sensei.picture.url }}" alt="{{ sensei.first_name }}" data-hover-image="{{ sensei.picture2.url }}" />
+						</figure>
+					</a>
+					<h3>{{ sensei.first_name }} {{ sensei.last_name }}</h3>
+					<small>{{ sensei.specialty }}</small>
+					<p>{{ sensei.short_description }}</p>
+					<a href="{% url 'senseis:sensei' slug=sensei.slug %}">
+					</a>
+				</div>
 			</div>
+			{% if forloop.counter|divisibleby:"4" %}
+				</div>
+				{% if not forloop.last %}
+					<div class="devf-senseis-container row">
+				{% endif %}
+			{% endif %}	
+			{% if forloop.last %}
+				</div>
+			{% endif %}
 			{% empty %}
 			<p>No hay senseis aún</p>
 		{% endfor %}
-	</ul>
+		</div>
+	</div>
 {% endblock %}

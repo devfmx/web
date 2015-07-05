@@ -12,31 +12,31 @@
 			<ul class="devf-menu-bar nav navbar-nav navbar-right">
 				<li>
 					{% url "home" as home_url %}
-					<a href="{% url "home" %}" class="{% if request.path == home_url %}devf-selected-menu{% endif %}">
+					<a href="{% url "home" %}" id="{% if request.path == home_url %}devf-selected-menu{% endif %}">
 						Inicio
 					</a>
 				</li>
 				<li>
 					{% url "about" as about_url %}
-					<a href="{% url "about" %}" class="{% if request.path == about_url %}devf-selected-menu{% endif %}">
+					<a href="{% url "about" %}" id="{% if request.path == about_url %}devf-selected-menu{% endif %}">
 						Acerca de
 					</a>
 				</li>
 				<li>
 					{% url "programs" as programs_url %}
-					<a href="{% url "programs:home" %}" class="{% if request.path == programs_url %}devf-selected-menu{% endif %}">
+					<a href="{% url "programs:home" %}" id="{% if request.path == programs_url %}devf-selected-menu{% endif %}">
 						Programas
 					</a>
 				</li>
 				<li>
 					{% url "senseis:home" as senseis_url %}
-					<a href="{% url "senseis:home" %}" class="{% if request.path == senseis_url %}devf-selected-menu{% endif %}">
+					<a href="{% url "senseis:home" %}" id="{% if request.path == senseis_url %}devf-selected-menu{% endif %}">
 						Senseis
 					</a>
 				</li>
 				<li>
 					{% url "mentors" as mentors_urls %}
-					<a href="{% url "mentors:home" %}" class="{% if request.path == mentors_urls %}devf-selected-menu{% endif %}">
+					<a href="{% url "mentors:home" %}" id="{% if request.path == mentors_urls %}devf-selected-menu{% endif %}">
 						Mentoress
 					</a>
 				</li>
