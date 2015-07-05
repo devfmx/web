@@ -5,20 +5,51 @@
         <div class="row">
             <div class="col-sm-12">
                 <h2>Programas</h2>
+                <p class="devf-programs-see-all">
+                    <a href="{% url 'programs:home' %}">Ver todos los programas</a>
+                </p>
             </div>
         </div>
-        <div class="row">
-            {% for program in programs %}
-                <div class="devf-program-box col-md-4 col-sm-12">
-                    <div class="dev-program-header">
+        {% for program in programs%}
+            {% if forloop.first %}
+                <div class="devf-programs-container row">
+            {% endif %}
+            <div class="col-md-4 col-sm-12">
+                <div class="devf-program-box">
+                    <div class="dev-program-header header-{{ program.slug }}">
                         <h3>{{ program.name }}</h3>
-                        <p>
+                        <p class="devf-program-price">
                             <span class="devf-old-price">{{program.old_price}}</span> /
                             <span class="devf-actual-price">{{program.actual_price}}</span>
                         </p>
                     </div>
+                    <div class="dev-program-requirements requirements-{{ program.slug }}">
+                        <p>
+                            {{ program.short_description }}
+                        </p>
+                        <ul>
+                            {% for requirement in program.requirements %}
+                                <li>{{ requirement }}</li>
+                            {% endfor %}
+                        </ul>
+                        <p class="devf-programs-read-more read-more-{{ program.slug }}">
+                            <a href="{% url 'programs:program' slug=program.slug %}">
+                                Leer más
+                            </a>
+                        </p>
+                    </div>
                 </div>
-            {% endfor %}
-        </div>
+            </div>
+            {% if forloop.counter|divisibleby:"3" %}
+                </div>
+                {% if not forloop.last %}
+                    <div class="devf-programs-container row">
+                {% endif %}
+            {% endif %}
+            {% if forloop.last %}
+                </div>
+            {% endif %}
+        {% endfor %}
+
     </div>
 </section>
