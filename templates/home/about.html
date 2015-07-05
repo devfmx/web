@@ -1,5 +1,27 @@
 {% extends 'home/home_base.html' %}
 
 {% block body %}
-<h2>About</h2>
+	{% include 'home/header.html' %}
+
+	{% include 'home/about-hero.html' %}
+	<div class="container-fluid about">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 who-what">
+					<h2>¿Quiénes somos?</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae voluptatibus, eligendi praesentium quis eius similique illum libero veritatis expedita sed, doloremque dolore! Eligendi quam tenetur, culpa perspiciatis laboriosam corrupti dicta!
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem cumque, excepturi amet deserunt. Quidem, voluptate, quas laborum rem quisquam vero exercitationem ex, ab aut aliquam, omnis nemo. Consequatur, ut, enim?
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quos, amet possimus quas esse quis repudiandae architecto ipsam eaque porro pariatur tenetur autem quia, deserunt expedita, debitis voluptate odio in?
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi ab temporibus ratione, sed illo tempora nulla quasi velit, vero veniam at? Maiores ipsam dolorem atque ab, omnis debitis nemo explicabo.</p>
+				</div>
+				<div class="col-md-6 who-what">
+					<h2>¿Qué hacemos?</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae voluptatibus, eligendi praesentium quis eius similique illum libero veritatis expedita sed, doloremque dolore! Eligendi quam tenetur, culpa perspiciatis laboriosam corrupti dicta!
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem cumque, excepturi amet deserunt. Quidem, voluptate, quas laborum rem quisquam vero exercitationem ex, ab aut aliquam, omnis nemo. Consequatur, ut, enim?
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quos, amet possimus quas esse quis repudiandae architecto ipsam eaque porro pariatur tenetur autem quia, deserunt expedita, debitis voluptate odio in?
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi ab temporibus ratione, sed illo tempora nulla quasi velit, vero veniam at? Maiores ipsam dolorem atque ab, omnis debitis nemo explicabo.</p>
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}about.html
