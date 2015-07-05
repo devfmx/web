@@ -5,7 +5,7 @@ from django.views import generic
 from mentors.models import Mentor
 from programs.models import Program
 from senseis.models import Sensei
-from testimonials.models import Testimonial
+from testimonials.models import Testimonial, Press
 
 import random
 
@@ -43,6 +43,8 @@ class HomeView(generic.TemplateView):
         testimonials_object_list = list(Testimonial.objects.all())
         random.shuffle(testimonials_object_list)
         context['testimonials'] = testimonials_object_list[:5]
+
+        context['press'] = Press.objects.all()
 
         return context
 

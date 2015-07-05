@@ -59,4 +59,4 @@ target/
 *.sqlite3
 *.pyc
 
-venv
+staticfiles/
