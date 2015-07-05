@@ -9,14 +9,14 @@
             {% if forloop.first %}
                 <div class="devf-press-container row">
             {% endif %}
-            <div class="col-md-3 col-sm-6 devf-press-box">
-                <a href="{{ press.link }}" target="_blank">
+            <div class="col-md-3 col-sm-12 devf-press-box">
+                <a href="{{ press_object.link }}" target="_blank">
                     <figure>
                         <img src="{{ press_object.image.url }}" alt="{{ press_object.press_name }}" />
                     </figure>
                 </a>
             </div>
-            {% if forloop.counter|divisibleby:"3" %}
+            {% if forloop.counter|divisibleby:"4" %}
                 </div>
                 {% if not forloop.last %}
                     <div class="devf-press-container row">
