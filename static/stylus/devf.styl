@@ -84,7 +84,7 @@ header
 					&:hover
 						color blue_link
 
-				.devf-selected-menu
+				#devf-selected-menu
 					color blue_link
 
 
@@ -119,6 +119,15 @@ header
 			margin-top 3em
 			font-weight 100
 			font-size 1.5em
+.senseis-hero
+	background-position center
+	background-repeat no-repeat
+	background-size cover
+	height 100vh !important
+
+.sensei
+	border solid 1px black
+.sensei:even(n)
 
 #devf-hacker-definition
 	background-position center
@@ -368,3 +377,7 @@ header
 	box-shadow none
 	background-image none !important
 	opacity 1 !important
+@media screen and (max-width: 770px)
+	header
+		.navbar-right
+			display none !important

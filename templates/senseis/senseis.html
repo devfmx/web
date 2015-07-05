@@ -1,10 +1,14 @@
 {% extends 'home/home_base.html' %}
 
 {% block body %}
+	{% include 'home/header.html' %}
+
+	{% include 'senseis/senseis_hero.html' %}
+
 	<h1>Senseis</h1>
 	<ul>
 		{% for sensei in sensei_list %}
-			<li>
+			<div class="col-md-4 sensei">
 				<h4>{{ sensei.first_name }} {{ sensei.last_name }}</h4>
 				<p>{{ sensei.specialty }}</p>
 				<p>{{ sensei.short_description }}</p>
@@ -13,7 +17,7 @@
 						<img src="{{ sensei.picture.url }}" alt="{{ sensei.first_name }}" style="display: block; width: 80px; border-radius: 50%;" />
 					</figure>
 				</a>
-			</li>
+			</div>
 			{% empty %}
 			<p>No hay senseis aún</p>
 		{% endfor %}

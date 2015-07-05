@@ -29,7 +29,7 @@
 					</a>
 				</li>
 				<li>
-					{% url "senseis" as senseis_url %}
+					{% url "senseis:home" as senseis_url %}
 					<a href="{% url "senseis:home" %}" class="{% if request.path == senseis_url %}devf-selected-menu{% endif %}">
 						Senseis
 					</a>

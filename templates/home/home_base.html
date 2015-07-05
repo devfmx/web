@@ -29,10 +29,6 @@
 
 	<!-- SEO -->
 
-	<!--Just for fun-->
-	<script type="text/javascript" src="{% static "js/lib/dom-animator.min.js" %}"></script>
-	<!--Just for fun-->
-
 	<!-- Static Files -->
 	<link rel="stylesheet" href="{% static "css/lib/bootstrap.min.css" %}" />
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css /'>
@@ -51,50 +47,15 @@
 <body>
 
 	{% block body %}{% endblock %}
-
+	<script src="{% static "js/lib/dom-animator.min.js" %}"></script>
 	<script src="{% static "js/lib/jquery-1.11.3.min.js" %}"></script>
 	<script src="{% static "js/lib/bootstrap.min.js" %}"></script>
 	<script src="{% static "js/lib/TweenMax.min.js" %}"></script>
 	<script src="{% static "js/lib/jquery.scrollmagic.js" %}"></script>
 	<script src="{% static "js/lib/jquery.scrollmagic.debug.js" %}"></script>
 	<script src="{% static "js/devf.js" %}"></script>
+	<script src="{% static "js/domanimator.js" %}"></script>
 	<script type="text/javascript">
-		var domAnimator = new DomAnimator();
-		var frame1 = [
-			' _______                         ______  ',
-			'/       \\                       /      \\ ',
-			'$$$$$$$  |  ______   __     __ /$$$$$$  |',
-			'$$ |  $$ | /      \\ /  \\   /  |$$ |_ $$/ ',
-			'$$ |  $$ |/$$$$$$  |$$  \\ /$$/ $$   |    ',
-			'$$ |  $$ |$$    $$ | $$  /$$/  $$$$/     ',
-			'$$ |__$$ |$$$$$$$$/   $$ $$/__ $$ |      ',
-			'$$    $$/ $$       |   $$$//  |$$ |      ',
-			'$$$$$$$/   $$$$$$$/     $/ $$/ $$/       '
-		];
-
-		var frame2 = [
-			"__/\\\\\\\\\\\\\\\\\\\\\\\\______________________________________________/\\\\\\\\\\_        ",
-			" _\\/\\\\\\////////\\\\\\__________________________________________/\\\\\\///__        ",
-			"  _\\/\\\\\\______\\//\\\\\\________________________________________/\\\\\\______      ",
-			"   _\\/\\\\\\_______\\/\\\\\\_____/\\\\\\\\\\\\\\\\___/\\\\\\____/\\\\\\________/\\\\\\\\\\\\\\\\\\___     ",
-			"    _\\/\\\\\\_______\\/\\\\\\___/\\\\\\/////\\\\\\_\\//\\\\\\__/\\\\\\________\\////\\\\\\//____    ",
-			"     _\\/\\\\\\_______\\/\\\\\\__/\\\\\\\\\\\\\\\\\\\\\\___\\//\\\\\\/\\\\\\____________\\/\\\\\\______   ",
-			"      _\\/\\\\\\_______/\\\\\\__\\//\\\\///////_____\\//\\\\\\\\_____________\\/\\\\\\______  ",
-			"       _\\/\\\\\\\\\\\\\\\\\\\\\\\\/____\\//\\\\\\\\\\\\\\\\\\\\____\\//\\\\\\______/\\\\\\____\\/\\\\\\______ ",
-			"        _\\////////////_______\\//////////______\\///______\\///_____\\///_______"
-		];
-
-		var frame3 = [
-			" _______   ___________    ____  _______ ",
-			"|       \\ |   ____\\   \\  /   / |   ____|",
-			"|  .--.  ||  |__   \\   \\/   /  |  |__   ",
-			"|  |  |  ||   __|   \\      /   |   __|  ",
-			"|  '--'  ||  |____   \\    / __ |  |     ",
-			"|_______/ |_______|   \\__/ (__)|__|     "
-		];
-		domAnimator.addFrame(frame1);
-		domAnimator.addFrame(frame2);
-		domAnimator.addFrame(frame3);
 		domAnimator.animate(1000);
 	</script>
 	{% block body_scripts %}{% endblock %}

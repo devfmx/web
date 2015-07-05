@@ -31,7 +31,7 @@ class Testimonial(models.Model):
 
 class Press(models.Model):
 
-    "Press model."
+    """Press model."""
 
     quoute = models.CharField(max_length=255, null=True, blank=True)
     press_namme = models.CharField(max_length=255, null=True, blank=True)
@@ -39,7 +39,7 @@ class Press(models.Model):
     link = models.URLField(null=True, blank=True)
 
     def __unicode__(self):
-        """Return the press name"""
+        """Return the press name."""
         return self.press_namme
 
     def showImage(self):
