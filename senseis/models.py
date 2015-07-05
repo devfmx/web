@@ -13,6 +13,7 @@ class Sensei(models.Model):
     specialty = models.CharField(max_length=600)
     short_description = models.CharField(max_length=600, blank=True, null=True)
     picture = models.ImageField(upload_to='senseis', blank=True, null=True)
+    picture2 = models.ImageField(upload_to='senseis', blank=True, null=True)
 
     def __unicode__(self):
         """Return the first and last name of the instance object."""
