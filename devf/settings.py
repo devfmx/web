@@ -18,6 +18,7 @@ ALLOWED_HOSTS = [
     'devf.mx',
     'www.devf.mx',
     'devfmx.herokuapp.com',
+    'improving.devf.mx',
 ]
 
 INSTALLED_APPS = (
@@ -47,7 +48,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'devf.middlewares.SSLMiddleware',
+    # 'devf.middlewares.SSLMiddleware',
 )
 
 ROOT_URLCONF = 'devf.urls'
